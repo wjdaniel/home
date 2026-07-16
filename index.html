@@ -16,8 +16,10 @@
     .header{
       background-color:#023743FF; 
       display:flex;
-      justify-content: flex-end;
+      justify-content: space-between; 
+      align-items: center;            
       margin: 0;
+      padding: 0 30px;                
     }
 
     .header-brand {
@@ -26,6 +28,13 @@
       font-size: 16px;
       font-weight: bold;
       letter-spacing: 1px;
+      font-family: Tahoma;
+      font-style: normal;
+      
+    }
+
+    .header-nav {
+      display: flex;
     }
 
     .header-button{
@@ -66,26 +75,28 @@
       align-items: center;
       padding: 20px;
       min-width: 300px;
-      background-color: rgba(255, 255, 255, 0.7); 
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 8px;
   
     }
 
     h1 {
-      margin:0 0 10px 0;
-      font-size: 4rem;
+      margin:0 0 20px 0;
+      font-size: 3rem;
       text-align: center;
       font-family: Tahoma;
-      color:#000000;
+      color:#023743FF;
     }
 
 
     h3 {
       margin:0;
-      font-size: 1rem;
+      font-size: 1.15rem;
       line-height: 1.6;
       text-align: center;
       font-family: Tahoma;
-      color:#000000;
+      color:#222222;
+      font-weight: normal;
     }
 
   </style>
