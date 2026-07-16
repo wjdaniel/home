@@ -16,7 +16,7 @@
     .header{
       background-color:#023743FF; 
       display:flex;
-      justify-content: right;
+      justify-content: flex-end;
       margin: 0;
     }
     .header-button{
@@ -29,7 +29,7 @@
       font-style: normal;
       cursor: pointer;
       text-decoration: none;
-
+      transition: background-color 0.3s ease, border-radius 0.3s ease;
     }
     .header-button:hover{
       background-color:  #476F84FF;
@@ -40,38 +40,47 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin:0;
+      min-height: calc(100vh - 75px); 
+      flex-wrap: wrap; 
     }
-    .image-column{
-      flex:1;
+
+    .image-column {
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin:0;
-      
+      padding: 20px;
+      box-sizing: border-box;
+      min-width: 300px; 
     }
-    .image{
-      max-width:50%;
-      max-height:50%;
+  
+    .image {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
     }
-    .text-column{
-      flex:1;
+    
+    .text-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 20px;
+      min-width: 300px;
     }
 
     h1 {
-      margin-top:0;
-      padding-top: 100px; 
-      font-size: 72px;
+      margin:0 0 20px 0;
+      font-size: 4rem;
       text-align: center;
       font-family: Tahoma;
       color:#453947FF;
     }
     h2 {
-      padding-bottom: 100px; 
-      margin-top:0;
-      font-size: 20px;
+      margin:0;
+      font-size: 1.25rem;
       text-align: center;
       font-family: Tahoma;
     
@@ -102,7 +111,8 @@
       <h2>
         PhD Candidate<br>
         Columbia University<br>
-        Lamont-Doherty Earth Observatory
+        Lamont-Doherty Earth Observatory<br>
+        wlee@ldeo.columbia.edu
       </h2>
       </div>
     </div>
