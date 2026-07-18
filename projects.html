@@ -2,20 +2,19 @@
 <html>
 <head>
   <title>Themes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 </head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
 <body>
   <style>
-
-    body{
-      background-color:#A4BED5FF; 
+    body {
+      background-color: #A4BED5FF; 
       margin: 0;
+      font-family: Tahoma, sans-serif;
     }
     
-    .header{
-      background-color:#023743FF; 
-      display:flex;
+    .header {
+      background-color: #023743FF; 
+      display: flex;
       justify-content: space-between; 
       align-items: center;            
       margin: 0;
@@ -30,18 +29,18 @@
       letter-spacing: 1px;
       font-family: Tahoma;
       font-style: normal;
-      
     }
+
     .header-nav {
       display: flex;
     }
 
-    .header-button{
-      color:white;
-      background-color:#023743FF; 
-      border:rgb(250, 250, 250);
-      padding:30px;
-      font-size:18px;
+    .header-button {
+      color: white;
+      background-color: #023743FF; 
+      border: none;
+      padding: 30px;
+      font-size: 18px;
       font-family: Tahoma;
       font-style: normal;
       cursor: pointer;
@@ -49,232 +48,143 @@
       transition: background-color 0.5s ease, border-radius 0.5s ease;
     }
 
-    .header-button:hover{
-      background-color:  #476F84FF;
-      border-radius:10px;
-    }
-    
-    .page{
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        margin:0;
-    }
-    .anchor{
-        flex:0.7;
-        padding-top:50px;
-        padding-left:50px;
-    }
-    .cv{
-        flex:1;
-        padding-top: 50px; 
-        padding-left: 50px; 
-        justify-content: left;
-        align-items: left;  
+    .header-button:hover {
+      background-color: #476F84FF;
+      border-radius: 10px;
     }
 
-    h1 {
-      margin:0 0 20px 0;
+    /* --- MAIN PAGE CONTENT --- */
+    .content-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      box-sizing: border-box;
+    }
+
+    /* Top Middle Title */
+    .page-title {
       font-size: 3rem;
       text-align: center;
-      font-family: Tahoma;
-      color:#023743FF;
+      color: #023743FF;
+      margin-top: 20px;
+      margin-bottom: 50px;
     }
 
+    /* The Responsive 3-Column Layout */
+    .theme-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px; /* Space between columns */
+      flex-wrap: wrap; /* Automatically wraps columns on smaller screens */
+    }
 
-    h2 {
-      margin:0;
-      font-size: 1.15rem;
+    .theme-column {
+      flex: 1;
+      min-width: 280px; /* Prevents columns from getting too narrow */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Clickable Image Wrapper */
+    .image-link {
+      width: 100%;
+      aspect-ratio: 1 / 1; /* FORCES THE CONTAINER TO BE A PERFECT SQUARE */
+      display: block;
+      overflow: hidden;
+      border-radius: 8px; /* Smooth corners */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft drop shadow */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .image-link:hover {
+      transform: translateY(-5px); /* Gentle lift effect on hover */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    /* The actual image */
+    .theme-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Crops the photo smartly to fill the square box */
+    }
+
+    /* Text block below the photos */
+    .theme-text {
+      font-size: 15px;
       line-height: 1.6;
+      text-align: justify;
+      color: #222222;
+      margin: 0;
+      padding: 0 10px;
+    }
+
+    /* Style for theme subheaders if you want them */
+    .theme-subtitle {
+      font-size: 1.5rem;
+      color: #023743FF;
+      margin: 0 0 10px 0;
       text-align: center;
-      font-family: Tahoma;
-      color:#222222;
-      font-weight: normal;
-    }
-
-    .cv-paragraph.t1{
-        margin-top:0;
-        font-size:15px;
-        text-align:justify;
-        font-family: Tahoma;
-        color:black;
-        margin-right: 150px;
-        text-decoration:none;
-    }
-
-    .cv-paragraph.p1 {
-        margin-top:0;
-        margin-bottom:0px;
-        padding-bottom:15px;
-        font-size: 40px;
-        text-align: left;
-        font-family: Tahoma;
-        color:black;
-        margin-right:150px;
-    }
-    .cv-paragraph.p2 {
-        margin-top:0;
-        padding-top:15px;
-        font-size: 20px;
-        text-align: left;
-        font-family: Tahoma;
-        color:black;
-        margin-right:150px;
-        border-top: 1px solid #6b6b6b
-    }
-    
-    .cv-paragraph.p3 {
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        margin:0;
-    }
-    .cv-paragraph.p3.left {
-        flex:1;
-        justify-content: flex-start;
-        align-items: flex-start;  
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .cv-paragraph.p3.left.m {
-        padding-bottom:10px;
-        margin-top:0;
-        font-size:12px;
-        text-align:left;
-        font-family: Tahoma;
-        color:black;
-    }
-    
-    .cv-paragraph.p3.right {
-        flex:0.6;
-        justify-content: flex-start;
-        align-items: flex-start;  
-        display: flex;
-        flex-direction: column;
-    }
-
-    .cv-paragraph.p3.right.m {
-        padding-bottom:10px;
-        margin-top:0;
-        font-size:12px;
-        text-align:right;
-        font-family: Tahoma;
-        color:black;
-        margin-right: 75px;
     }
   </style>
 
-    <div class="header">
-      <a href="https://wjdaniel.github.io/home/" class="header-brand">Daniel Lee</a>
+  <div class="header">
+    <a href="https://wjdaniel.github.io/home/" class="header-brand">Daniel Lee</a>
 
-      <div class="header-nav">
-        <a href="https://wjdaniel.github.io/home/" class="header-button">Home</a>
-        <a href="https://wjdaniel.github.io/home/projects" class="header-button">Projects</a>
-        <a href="https://wjdaniel.github.io/home/cv" class="header-button">CV</a>
-        <a href="https://wjdaniel.github.io/home/life" class="header-button">Field Photos</a>
+    <div class="header-nav">
+      <a href="https://wjdaniel.github.io/home/" class="header-button">Home</a>
+      <a href="https://wjdaniel.github.io/home/projects/" class="header-button">Projects</a>
+      <a href="https://wjdaniel.github.io/home/cv" class="header-button">CV</a>
+      <a href="https://wjdaniel.github.io/home/life" class="header-button">Field Photos</a>
+    </div>
+  </div>
+
+  <div class="content-container">
+    <!-- Top Middle Title -->
+    <h1 class="page-title">Themes</h1>
+
+    <!-- 3-Column Theme Grid -->
+    <div class="theme-grid">
+      
+      <!-- Theme 1 -->
+      <div class="theme-column">
+        <!-- Replace href="#" with your target page URL -->
+        <a href="https://wjdaniel.github.io/home/theme1" class="image-link">
+          <img class="theme-image" src="./images/IMG_1.jpg" alt="Theme 1 Visual">
+        </a>
+        <h2 class="theme-subtitle">Microanalysis</h2>
+        <p class="theme-text">
+          Description relating to your first theme goes here. You can explain your work using microanalysis tools, target minerals, or the types of questions you are exploring.
+        </p>
       </div>
+
+      <!-- Theme 2 -->
+      <div class="theme-column">
+        <!-- Replace href="#" with your target page URL -->
+        <a href="https://wjdaniel.github.io/home/theme2" class="image-link">
+          <img class="theme-image" src="./images/IMG_2.jpg" alt="Theme 2 Visual">
+        </a>
+        <h2 class="theme-subtitle">Computational Modeling</h2>
+        <p class="theme-text">
+          Description relating to your second theme goes here. Discuss the numerical models, thermodynamic calculations, or timescales involved in your magmatic research.
+        </p>
+      </div>
+
+      <!-- Theme 3 -->
+      <div class="theme-column">
+        <!-- Replace href="#" with your target page URL -->
+        <a href="https://wjdaniel.github.io/home/theme3" class="image-link">
+          <img class="theme-image" src="./images/IMG_3.jpg" alt="Theme 3 Visual">
+        </a>
+        <h2 class="theme-subtitle">High-PT Experiments</h2>
+        <p class="theme-text">
+          Description relating to your third theme goes here. Highlight the high-pressure, high-temperature experimental setups you use to reconstruct mantle and volcanic processes.
+        </p>
+      </div>
+
     </div>
+  </div>
 
-
-    <div class="page">
-        <div class="anchor">
-            <h1>Lee Wei Jie Daniel</h1>
-            <h2>Last Updated: 17 July 2026</h2>
-            <h2>Email: wlee@ldeo.columbia.edu</h2>
-        </div>
-
-        <div class="cv">
-            <p class="cv-paragraph p1"><b>Curriculum Vitae</b></p>
-
-            <p class="cv-paragraph p2"><b>Education</b></p>
-            <p class="cv-paragraph t1"><b>2023-est. 2028</b> Ph.D. in Earth & Environmental Sciences,<i>Columbia University, New York, USA</i><br>
-            Advisor: Prof. Terry Plank</p>
-
-            <p class="cv-paragraph t1"><b>2023-2025</b> M.A. in Earth & Environmental Sciences<i>Columbia University, New York, USA</i><br></p>
-            
-            <p class="cv-paragraph t1"><b>2019-2023</b> B.S. (Hons) in Environmental Earth Systems Science, Geoscience, <i>Nanyang Technological University, Singapore</i><br>
-            Thesis: Sensitivity analysis of current continuous GPS networks to monitor volcanic unrest<br>
-            Supervisor: Prof. Benoit Taisne</p>
-            
-            <p class="cv-paragraph p2"><b>Honors, Prizes and Research Fellowships</b></p>
-            <p class="cv-paragraph t1"><b>2025</b> American Geophysical Union Lawrence A. Taylor Research Fund ($5000)</p>
-
-            <p class="cv-paragraph p2"><b>Workshops</b></p>
-            <p class="cv-paragraph t1"><b>2026</b> SZ4D 2026 Science Community Meeting, Long Beach</p>
-            <p class="cv-paragraph t1"><b>2025</b> SZ4D Mini-Workshop Research Prioritization in the Alaska-Aleutian Arc, New Orleans</p>
-            <p class="cv-paragraph t1"><b>2025</b> NSF Research Prioritization for Volcanoes Across the Alaska-Aleutian Arc, Anchorage</p>
-            <p class="cv-paragraph t1"><b>2025</b> AVERT Field Workshop, Costa Rica</p>
-            <p class="cv-paragraph t1"><b>2024</b> Diffusion Workshop, Ruhr-University, Bochum</p>
-            <p class="cv-paragraph t1"><b>2024</b> SZ4D Experimental Petrology in Subduction Zones, Washington D.C.</p>
-
-            <p class="cv-paragraph p2"><b>Outreach, Academic Service and Community Efforts</b></p>
-            <p class="cv-paragraph t1"><b>2026</b> Journal Reviewer: Volcanica</p>
-            <p class="cv-paragraph t1"><b>2023-present</b> Lamont-Doherty Earth Observatory Open House</p>
-            <p class="cv-paragraph t1"><b>2023-present</b> Community Rehomogenization</p>
-
-
-            <p class="cv-paragraph p2"><b>Lab & Analytical Experience</b></p>
-            <p class="cv-paragraph t1"><b>Nanyang Technological University</b></p>
-            <div class="cv-paragraph p3">
-                <div class="cv-paragraph p3 left">
-                    <p class="cv-paragraph p3 left m">Fourier Transform Infrared Spectroscopy (FTIR)</p>
-                    <p class="cv-paragraph p3 left m">Scanning Electron Microscope (SEM)</p>
-                    <p class="cv-paragraph p3 left m">Electron Microprobe Analysis (EPMA)</p>
-                    <p class="cv-paragraph p3 left m">Non-end loaded piston cylinder</p>
-                    <p class="cv-paragraph p3 left m">1-atm furnance</p>
-                    <p class="cv-paragraph p3 left m">LA-ICP-MS</p>
-                </div>
-                <div class="cv-paragraph p3 right">
-                    <p class="cv-paragraph p3 right m">Proficient</p>
-                    <p class="cv-paragraph p3 right m">Proficient</p>
-                    <p class="cv-paragraph p3 right m">Proficient</p>
-                    <p class="cv-paragraph p3 right m">Proficient</p>
-                    <p class="cv-paragraph p3 right m">Proficient</p>
-                    <p class="cv-paragraph p3 right m">Proficient</p>
-                </div>
-            </div>
-
-            <p class="cv-paragraph p2"><b>Publications</b></p>
-
-            <p class="cv-paragraph t1">(<a href="https://scholar.google.com/citations?user=Mj4KXLQAAAAJ&hl=en&oi=ao">Google Scholar</a>)</p>
-            
-            <p class="cv-paragraph t1"><b>*</b> Student mentored</p>
-            <p class="cv-paragraph t1"><b>+</b> Community Rehomogenization</p>
-
-
-            <p class="cv-paragraph t1"><b>Lee, D. W.</b>, Plank, T., Ding, S., Mutch, E. J., Moussallam, Y., Moshrefzadeh, J., Graham, N., & Larsen, J. (2026). Steady or sudden: the 2008 eruption of Okmok, Alaska. Earth and Planetary Science Letters, 686, 120051. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0012821X26002347"><i>doi: 10.1016/j.epsl.2026.120051</i></a></p>
-            <p class="cv-paragraph t1">Benet, D., Costa, F., Migadel, K., <b>Lee, D. W.</b>, D’Oriano, C., Pompilio, M., Nurfiani, D., & Rifai, H. (2025). A repository-hosted dataset of volcanic ash particle images and features. Scientific data, 12(1), 681. <a href="https://www.nature.com/articles/s41597-025-04942-9"><i>doi: 10.1038/s41597-025-04942-9</i></a></p>
-            <p class="cv-paragraph t1">Szymanowski D., Forni F., Phua M., Jicha B.,<b> Lee W. J. D.</b>, Hsu Y., Rifai H., Schoene B., Bouvet de Maisonneuve C. (2023) A shifty Toba magma reservoir: Improved 
-                eruption chronology and petrochronological evidence for lateral growth of a giant magma body. Earth and Planetary Science Letters 622 (2023): 118408 <a href="https://www.sciencedirect.com/science/article/pii/S0012821X23004211"><i>doi: 10.1016/j.epsl.2023.118408</i></a></p>
-            <p class="cv-paragraph t1">Rahman, N., Smith, S., Lam, W. Y., Kwek, Y. C., Chua, M. S. E., Teo, P. Y.,<b> Lee, W. J. D.</b>, Phua S. Y., Aw, C. Y., Fatimah, Y. A., Lee, J. S. H.,
-                Wardle, D. A. (2023). Leaf decomposition and flammability are largely decoupled across species in a tropical swamp forest despite some shared predictive leaf functional traits
-                New Phytologist, 238(2): 598-611. <a href="https://nph.onlinelibrary.wiley.com/doi/10.1111/nph.18742"><i>doi: 10.1111/nph.18742</i></a></p>
-            <p class="cv-paragraph t1">Williams, G., Jenkins, S., <b>Lee, W. J. D.</b>, & Wee, S. (2021). How rainfall influences tephra fall loading — an experimental approach. 
-                 Bulletin Of Volcanology, 83(6), 42 <a href="https://link.springer.com/article/10.1007/s00445-021-01465-0"><i>doi: 10.1007/s00445-021-01465-0</i></a></p> 
-           
-            <p class="cv-paragraph p2"><b>Working Papers <i>(Out for submission in weeks to months)</i></b></p>
-            <p class="cv-paragraph t1"><b>Lee W. J. D.</b>, Ding, S., Plank, T. (in prep). An evaluation of olivine-hosted melt inclusions as a magmatic barometer. <i>To be submitted to Journal of Petrology</i>
-            <p class="cv-paragraph t1"><b>Lee W. J. D.</b>, Plank, T., Kelley, K. A., Langmuir, C. H., Haase, K., Kamenetsky, V., & Arculus, R. J. (in prep). Hydrous Mineral Stability in a Subducting Slab Dictates Magmatic Water.
-            
-            <p class="cv-paragraph p2"><b>Conference Abstracts</b></p>
-            <p class="cv-paragraph t1">Shi, S. C., Wieser, P., Gleeson, G., Mutch, J. F. E., <b>Lee, D.</b>, Plank, T., Lynn, K., Ruth, D., Mourey, A., Towbin, W. H., Martin, C., Moore, L. R., Rezeau, H., Kennedy, S. A., Tepley, F., Petrone, C. M. & von der Handt, A. (2026). Probe the Probe, Test the Clock: A Round Robin Assessment of EPMA Variability and Olivine Diffusion Timescales. <a href="https://conf.goldschmidt.info/goldschmidt/2026/meetingapp.cgi/Paper/37662"><i>Goldschmidt 2026</i></a></p>
-            <p class="cv-paragraph t1"><b>+</b>Hughes, E. C., Smid, E., <b>Lee, D.</b>, Kilgour, G., Monteleone, B. D., Shea, J. J., Rowe, M., Hilton, T., Flemming, L., Turnbull, J., Mazot, A. & Moussallam, Y. (2026). Could CO 2 be used for volcano monitoring in Tāmaki Makaurau Auckland, Aoteaora New Zealand? <a href="https://conf.goldschmidt.info/goldschmidt/2026/meetingapp.cgi/Paper/36853"><i>Goldschmidt 2026</i></a></p>
-            <p class="cv-paragraph t1"><b>*</b>Marostica, M., <b>Lee, W. J. D.</b>, Peccia, A., Plank, T. A., de Moor, M. J., & Avard, G. (2025). First Insights into Volatiles and Magma Storage Beneath Poás Volcano: A Shallow Phreatomagmatic System. <a href="https://ui.adsabs.harvard.edu/abs/2025AGUFMV31C.0071M/abstract"><i>American Geophysical Union 2025</i></a></p>
-            <p class="cv-paragraph t1"><b>Lee, W. J. D.</b>, Plank, T. A., Kelley, K. A., Langmuir, C. H., Haase, K., Kamenetsky, V., & Arculus, R. J. (2025). Mapping Water and Trace Elements across the Tonga-Lau System: Effects of Cold Slab Subduction. <a href="https://ui.adsabs.harvard.edu/abs/2025AGUFMV44A...04L/abstract"><i>American Geophysical Union 2025</i></a></p>
-            <p class="cv-paragraph t1">Moss, M., Madison, M., Mark, H. F., Yang, X., Cheng, Y., Grapenthin, R., Lizik, L., Portner, D. E., <b>Lee, W. J. D.</b>, Wu, S., Larsen, J. F., Coombs, M. L. & Freymueller, J. T. (2025). Petrologic and Geophysical Synthesis of the Magmatic System at Akutan Volcano. <a href="https://ui.adsabs.harvard.edu/abs/2025AGUFMV41A...04M/abstract"><i>American Geophysical Union 2025</i></a></p>
-            <p class="cv-paragraph t1"><b>Lee, W. J. D.</b>, Plank, T. A., Ding, S., Mutch, E., Moshrefzadeh, J. A., Graham, N. A., & Larsen, J. F. (2024). Short (5 hr) Precursory Seismic Swarm Driven by Deep Magma Injection: the 2008 Eruption of Okmok, Alaska. <a href="https://ui.adsabs.harvard.edu/abs/2024AGUFMV51C.3104L/abstract"><i>American Geophysical Union 2024</i></a></p>
-            <p class="cv-paragraph t1"><b>Lee W. J. D.</b>, Hsu Y., Forni F., Bouvet de Maisonneuve C., Phua M., Rifai H., Redfern S. A. T. (2022). Improved volatile quantification in unexposed quartz-hosted
-                melt inclusions by FTIR spectroscopy and an application to the Toba Caldera Complex, Sumatra (Indonesia). <a href="https://conf.goldschmidt.info/goldschmidt/2022/meetingapp.cgi/Paper/11066"><i>Goldschmidt 2022</i></a></p>
-            
-            <p class="cv-paragraph p2"><b>Teaching</b></p>
-            <p class="cv-paragraph t1"><b>Teaching Assistant. Nanyang Technological University, Singapore </b></p>
-            <p class="cv-paragraph t1">Module: <a href="https://www.ntu.edu.sg/ase/admissions/undergraduate-programmes/modules-listing/computational-earth-systems-science">ES2001 Computational Earth Systems Science</a>, Fall 2021, 39UG</p>
-            <p class="cv-paragraph t1">Module: <a href="https://www.ntu.edu.sg/ase/admissions/undergraduate-programmes/modules-listing/earth-materials">ES2002 Earth Materials</a>, Spring 2022 & 2023, 11UG & 12UG</p>
-
-
-        </div>
-    </div>
 </body>
 </html>
-
